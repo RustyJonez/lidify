@@ -1,5 +1,4 @@
-export function normalizeToArray(value: any) {
-  if (Array.isArray(value)) return value;
-  if (value && typeof value === "object") return [value];
-  return [];
+export function normalizeLastFmArray<T>(data: T | T[] | undefined): T[] {
+  if (!data) return [];
+  return Array.isArray(data) ? data : [data];
 }
