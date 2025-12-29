@@ -901,7 +901,8 @@ class LastFmService {
 
                     // Last fallback to Last.fm images (but filter placeholders)
                     if (!image) {
-                        const lastFmImage = this.getBestImage(artist.image);
+                        const images = normalizeToArray(artist.image);
+                        const lastFmImage = this.getBestImage(images);
                         if (
                             lastFmImage &&
                             !lastFmImage.includes(
